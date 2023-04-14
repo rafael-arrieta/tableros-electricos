@@ -13,4 +13,4 @@ Details:
 
 Tegnologies: ReactJS v18, HTML5, CSS3, JavaScript.
 
-required: conocimientogit s básicos sobre materiales electricos y tableros,
+required: conocimientos básicos sobre materiales electricos y tableros,

@@ -33,20 +33,20 @@ function App() {
             name: 'bornera de tierra',
             image: '',
             slots: 1
+        },
+        {
+            id: 4,
+            name: 'protector',
+            image: '',
+            slots: 2
         }
+
     ]
 
     
     return (
-        <div className="App">
-            <input placeholder="cantidad"></input>
-            <select>
-                <option>2</option>
-                <option>4</option>
-                <option>8</option>
-            </select>
-
-            <div className="square__container">
+        <div className="container">
+            <div className="item__container">
                 {itemsArray.map((item,i)=> <Square id={item.id} key={i} sendId={sendId} />)}
             </div>
 

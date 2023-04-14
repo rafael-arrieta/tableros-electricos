@@ -1,14 +1,23 @@
-.App {
+*{
     box-sizing: border-box;
+}
+.App {
+    
     text-align: center;
     height: 100vh;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: row;
     align-items: center;
 }
 
+.container{
+    height: 90vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    padding: 2em;
+}
 .drag__square-1{
     height: 150px;
     width: 150px;
@@ -53,8 +62,10 @@ slot{
     height: 150px;
     background-color: aliceblue;
 }
-.square__container{
-    display: flex;
+.item__container{
+    display: grid;
+    grid-template-columns: repeat(2 ,150px);
+    grid-template-rows: repeat(2 ,150px);
     padding: 2em;
-    gap: 2em;
+    gap: 1em
 }

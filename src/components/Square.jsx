@@ -5,6 +5,7 @@ function Square({id,sendId}){
             className={"drag__square-"+id}
             draggable="true"
             onDragStart={()=>{sendId(id)}}
+            onTouchStart={()=>{sendId(id)}}
         ></div>
     )
 }
