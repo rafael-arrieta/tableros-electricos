@@ -1,38 +1,60 @@
 .App {
-  text-align: center;
+    box-sizing: border-box;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.drag__square-1{
+    height: 150px;
+    width: 150px;
+    background-color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.drag__square-2{
+    height: 150px;
+    width: 150px;
+    background-color: blue;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.drag__square-3{
+    height: 150px;
+    width: 150px;
+    background-color: darkgreen;
 }
 
-.App-link {
-  color: #61dafb;
+.drag__square-4{
+    height: 150px;
+    width: 150px;
+    background-color: mediumpurple;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drop__container{
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: repeat(4 ,150px);
+    grid-template-rows: repeat(2 ,150px);
+    padding: 2em;
+}
+
+.empty__slot{
+    width: 100%;
+    height: 150px;
+    background-color: aliceblue;
+    border: 1px dashed green;
+}
+
+slot{
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+}
+.square__container{
+    display: flex;
+    padding: 2em;
+    gap: 2em;
 }
