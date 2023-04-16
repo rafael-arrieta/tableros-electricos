@@ -1,71 +1,16 @@
-*{
+.App{
     box-sizing: border-box;
-}
-.App {
-    
     text-align: center;
-    height: 100vh;
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.container{
-    height: 90vh;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-    padding: 2em;
-}
-.drag__square-1{
-    height: 150px;
-    width: 150px;
-    background-color: red;
-}
-
-.drag__square-2{
-    height: 150px;
-    width: 150px;
-    background-color: blue;
-}
-
-.drag__square-3{
-    height: 150px;
-    width: 150px;
-    background-color: darkgreen;
-}
-
-.drag__square-4{
-    height: 150px;
-    width: 150px;
-    background-color: mediumpurple;
-}
-
-.drop__container{
-    border: 1px solid green;
-    display: grid;
-    grid-template-columns: repeat(4 ,150px);
-    grid-template-rows: repeat(2 ,150px);
-    padding: 2em;
+    height: 100vh;
+    padding:2em;
+    border: 1px solid red;
 }
 
 .empty__slot{
     width: 100%;
-    height: 150px;
+    height: 160px;
     background-color: aliceblue;
     border: 1px dashed green;
 }
 
-slot{
-    width: 150px;
-    height: 150px;
-    background-color: aliceblue;
-}
-.item__container{
-    display: grid;
-    grid-template-columns: repeat(2 ,150px);
-    grid-template-rows: repeat(2 ,150px);
-    padding: 2em;
-    gap: 1em
-}

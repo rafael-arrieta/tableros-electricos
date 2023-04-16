@@ -1,0 +1,12 @@
+
+.draggable__item{
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.item__image{
+    height: 160px;
+}

@@ -1,0 +1,23 @@
+.button__close{
+    width: 100%;
+    height: 20px;
+    background-color: red;
+    border: none;
+}
+
+.button__close:hover{
+    background-color: rgb(185, 5, 5);
+}
+
+.img{
+    height: 160px;
+}
+
+.dropoff__item{
+    width: 74px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
