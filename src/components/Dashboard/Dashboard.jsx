@@ -30,7 +30,13 @@ function Dashboard() {
             id: 3,
             name: 'bornera de tierra',
             image: './assets/items/bornera.svg',
-            slots: 2
+            slots: 1
+        },
+        {
+            id: 4,
+            name: 'bornera de tierra',
+            image: './assets/items/trifasica.svg',
+            slots: 1
         }
     ]
 

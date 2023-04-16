@@ -2,12 +2,8 @@ import'./ItemDropOff.css'
 
 function ItemDropOff({id,clearSlot,item}){
 
-    //let srcRoute = `./assets/item${id}.svg`
-    let dropOffItemClass =`dropoff__item`
-    //style={gridItem:"nth-child(2)"}
-
     return (
-        <div className={dropOffItemClass} >
+        <div className='dropoff__item' >
             <img className="img" src={item.image} alt=''/>
             <p>{item.name}</p>
             <button 
@@ -16,7 +12,7 @@ function ItemDropOff({id,clearSlot,item}){
                     (e)=>{e.preventDefault()
                     clearSlot();
                 }}
-            >x</button>
+            >X</button>
            
         </div>
     )
