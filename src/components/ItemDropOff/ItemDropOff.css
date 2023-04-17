@@ -14,7 +14,6 @@
 }
 
 .dropoff__item{
-    width: 74px;
     height: 200px;
     display: flex;
     flex-direction: column;

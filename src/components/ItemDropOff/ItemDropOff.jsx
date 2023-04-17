@@ -2,8 +2,11 @@ import'./ItemDropOff.css'
 
 function ItemDropOff({id,clearSlot,item}){
 
+    let styleCalc={width:`calc(${item.slots}*36px`}
+
     return (
-        <div className='dropoff__item' >
+        <div className='dropoff__item' style={styleCalc}>
+
             <img className="img" src={item.image} alt=''/>
             <p>{item.name}</p>
             <button 

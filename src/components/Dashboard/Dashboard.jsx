@@ -28,21 +28,21 @@ function Dashboard() {
         },
         {
             id: 3,
-            name: 'bornera de tierra',
+            name: 'bornera',
             image: './assets/items/bornera.svg',
             slots: 1
         },
         {
             id: 4,
-            name: 'bornera de tierra',
+            name: 'tripolar',
             image: './assets/items/trifasica.svg',
-            slots: 1
+            slots: 3
         }
     ]
 
     const [dragend, setDragend] = useState(null);
     const [dropItem, setDropItem] = useState(null);
-    const [gridStyle, setGridStyle] = useState(null);
+    
 
     const sendId = (id) => {
         setDragend(id);
@@ -50,27 +50,39 @@ function Dashboard() {
     };
 
     const [board, setBoard] = useState([])
-    const [count,setCount] = useState(1);
 
     const gridHandlerStyle = (i, slots, value)=>{
-
-        !value ? setCount(count+1):setCount(count-1)
         //count cuenta la cantidad de slots eliminados o la cantidad de posiciones en false
         //slots es la cantidad de lugares que debe ocupar, puede se 1, 2, 3, 4
         const newBoard = [...board]; // crea una copia del arreglo original
-        newBoard[i+1] = value; // actualiza el valor correspondiente a true
-        setBoard(newBoard);
+        //newBoard[i+slots] = value; // actualiza el valor correspondiente a true
+        
+        console.log(`${i} - cant ${slots} y value ${value}`);
+        switch (slots){
 
+            case 2:
+                newBoard[i+1] = value
+                console.log(newBoard);
+                break
 
-        for(let i=0; i<newBoard.length; i++)
-        {
-            console.log(`[${i}] del array ${newBoard[i]}`)
+            case 3:
+                newBoard[i+1] = value
+                newBoard[i+2] = value
+                console.log(newBoard);
+                break
 
-            if(!newBoard[i]){
-                //si la posicion esta en falso, a la anterior aumentar el grid style
-            }
-            
+            case 4:
+                newBoard[i+1] = value
+                newBoard[i+2] = value
+                newBoard[i+3] = value
+                console.log(newBoard);
+                break
+
+            default:
+                console.log(newBoard);
+                break
         }
+        setBoard(newBoard);
     }
     
     const setSlots = (value)=>{
@@ -80,12 +92,6 @@ function Dashboard() {
         }
         setBoard(arr)
     }
-
-    const truePositions = board.filter((position) => position === true);
-    
-    //console.log('board es: '+board);
-    //el truePositions y board tienen que matchear la posicion del board que se encuentra en false pero no despreciarla
-    // el bug está en que el tipo va restantando posiciones y no es consitente en eso
 
     return (
         <>
@@ -97,23 +103,22 @@ function Dashboard() {
                         <button onClick={()=>setSlots(8)} className="selector__button">8</button>
                         <button onClick={()=>setSlots(16)} className="selector__button">16</button>
                     </div>
-                    <div className="item__container" style={gridStyle}>
+                    <div className="item__container">
                         {itemsArray.map((item,i)=> <Item id={item.id} image={item.image} key={i} sendId={sendId}/>)}
                     </div>
                 </div>
 
                 <div className="drop__container">
-                    {truePositions.map((slot, i) => <EmptySlot 
+                    {board.map((slot, i) => <EmptySlot 
                                     id={i}
                                     key={i} 
                                     recievedId={dragend}
                                     item={dropItem}
                                     gridHandlerStyle={gridHandlerStyle}
-                                    boardLenght={board.length}
+                                    boardIndex={board[i]}
                                 />)}
                 </div>
             </div>
-            <p>Count={count}</p>
         </>
     );
 }
